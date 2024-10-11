@@ -3,74 +3,108 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Andrea Bravaccino - Una App a Settimana con AI</title>
+    <title>Andrea Bravaccino - Sviluppatore AI</title>
     <style>
         body {
-            font-family: Arial, sans-serif;
-            line-height: 1.6;
+            font-family: sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
             color: #333;
-            max-width: 800px;
-            margin: 0 auto;
-            padding: 20px;
         }
+
         header {
+            background-color: #333;
+            color: #fff;
             text-align: center;
-            margin-bottom: 40px;
+            padding: 1rem 0;
         }
-        h1 {
-            color: #2c3e50;
+
+        .container {
+            max-width: 800px;
+            margin: 20px auto;
+            padding: 20px;
+            background-color: #fff;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
         }
-        .cta-button {
-            display: inline-block;
-            background-color: #3498db;
-            color: white;
-            padding: 10px 20px;
-            text-decoration: none;
+
+        h1, h2, h3 {
+            color: #333;
+        }
+
+        .app-card {
+            background-color: #f8f8f8;
+            border: 1px solid #ddd;
+            padding: 10px;
+            margin-bottom: 10px;
             border-radius: 5px;
-            margin-top: 20px;
         }
-        .social-links {
-            margin-top: 30px;
+
+        .app-card img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 5px;
         }
-        .social-links a {
-            margin: 0 10px;
-            color: #3498db;
+
+        footer {
+            background-color: #333;
+            color: #fff;
+            text-align: center;
+            padding: 1rem 0;
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+        }
+
+        a {
+            color: #007bff;
             text-decoration: none;
+        }
+
+        a:hover {
+            text-decoration: underline;
         }
     </style>
 </head>
 <body>
+
     <header>
         <h1>Andrea Bravaccino</h1>
-        <p>Sviluppatore e Innovatore AI</p>
+        <h2>Sviluppatore AI</h2>
     </header>
 
-    <main>
-        <h2>Una App a Settimana con AI</h2>
-        <p>Benvenuti nella mia vetrina digitale! Sono Andrea Bravaccino, uno sviluppatore appassionato che ha intrapreso una sfida unica: creare una nuova app ogni settimana utilizzando esclusivamente l'intelligenza artificiale.</p>
+    <div class="container">
+        <p>Benvenuti nel mio sito web! Sono uno sviluppatore appassionato di intelligenza artificiale. Il mio obiettivo è creare un'app a settimana utilizzando esclusivamente l'IA, dalla concezione all'implementazione.</p>
 
-        <h3>Il Progetto</h3>
-        <p>Dal processo creativo all'implementazione, ogni aspetto delle mie app è guidato dall'AI. Questo progetto innovativo esplora i confini della tecnologia e dimostra il potenziale dell'intelligenza artificiale nello sviluppo di applicazioni.</p>
+        <h2>Le mie app</h2>
 
-        <h3>Segui il Mio Percorso</h3>
-        <p>Ogni settimana, documento il mio processo su Threads. Segui il mio viaggio per scoprire come l'AI sta rivoluzionando lo sviluppo di app!</p>
-
-        <a href="https://www.threads.net/@andrea150592?invite=4" class="cta-button" target="_blank">Seguimi su Threads</a>
-
-        <h3>Le Mie App</h3>
-        <p>Tutte le app create durante questo progetto sono disponibili sul Google Play Store. Scaricale e sperimenta il futuro dello sviluppo app!</p>
-
-        <a href="https://play.google.com/store/apps/developer?id=Andrea+Bravaccino" class="cta-button" target="_blank">Visita il mio Play Store</a>
-
-        <h3>Contattami</h3>
-        <p>Hai domande sul progetto o vuoi collaborare? Non esitare a contattarmi!</p>
-
-        <p>Email: <a href="mailto:andreabravaccino@gmail.com">andreabravaccino@gmail.com</a></p>
-
-        <div class="social-links">
-            <a href="https://www.threads.net/@andrea150592?invite=4" target="_blank">Threads</a>
-            <a href="https://play.google.com/store/apps/developer?id=Andrea+Bravaccino" target="_blank">Google Play</a>
+        <div class="app-card">
+            <img src="app1.png" alt="Applicazione 1">
+            <h3>Nome dell'app 1</h3>
+            <p>Breve descrizione dell'app 1.</p>
+            <a href="#">Scopri di più</a>
         </div>
-    </main>
+
+        <div class="app-card">
+            <img src="app2.png" alt="Applicazione 2">
+            <h3>Nome dell'app 2</h3>
+            <p>Breve descrizione dell'app 2.</p>
+            <a href="#">Scopri di più</a>
+        </div>
+
+        <h2>Seguimi</h2>
+        <ul>
+            <li><a href="https://www.threads.net/@andrea150592?invite=4">Threads</a></li>
+            <li><a href="https://play.google.com/store/apps/developer?id=Andrea+Bravaccino">Play Store</a></li>
+        </ul>
+
+        <h2>Contattami</h2>
+        <p>Email: andreabravaccino@gmail.com</p>
+    </div>
+
+    <footer>
+        <p>&copy; 2023 Andrea Bravaccino</p>
+    </footer>
+
 </body>
 </html>
