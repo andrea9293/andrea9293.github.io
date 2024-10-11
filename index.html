@@ -5,61 +5,110 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Un'App a Settimana con AI</title>
     <style>
+        :root {
+            --primary-color: #4a90e2;
+            --secondary-color: #f39c12;
+            --background-color: #f0f4f8;
+            --text-color: #333;
+            --card-bg-color: #ffffff;
+        }
         body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            font-family: 'Arial', sans-serif;
             line-height: 1.6;
-            color: #333;
+            color: var(--text-color);
+            background-color: var(--background-color);
+            margin: 0;
+            padding: 0;
+        }
+        .container {
             max-width: 800px;
             margin: 0 auto;
             padding: 20px;
-            background-color: #f5f5f5;
         }
-        h1 {
-            color: #2c3e50;
+        header {
+            background-color: var(--primary-color);
+            color: white;
             text-align: center;
+            padding: 40px 0;
             margin-bottom: 30px;
         }
-        .container {
-            background-color: white;
-            padding: 30px;
+        h1 {
+            margin: 0;
+            font-size: 2.5em;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+        }
+        .tagline {
+            font-style: italic;
+            margin-top: 10px;
+        }
+        .card {
+            background-color: var(--card-bg-color);
             border-radius: 10px;
             box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            padding: 30px;
+            margin-bottom: 30px;
+        }
+        h2 {
+            color: var(--primary-color);
+            border-bottom: 2px solid var(--secondary-color);
+            padding-bottom: 10px;
         }
         .highlight {
-            color: #3498db;
+            color: var(--secondary-color);
             font-weight: bold;
         }
         .cta-button {
             display: inline-block;
-            background-color: #3498db;
+            background-color: var(--secondary-color);
             color: white;
-            padding: 10px 20px;
+            padding: 15px 30px;
             text-decoration: none;
             border-radius: 5px;
-            margin-top: 20px;
+            font-weight: bold;
+            text-align: center;
             transition: background-color 0.3s ease;
+            margin-top: 20px;
         }
         .cta-button:hover {
-            background-color: #2980b9;
+            background-color: #e67e22;
+        }
+        @media (max-width: 600px) {
+            h1 {
+                font-size: 2em;
+            }
+            .card {
+                padding: 20px;
+            }
         }
     </style>
 </head>
 <body>
-    <div class="container">
+    <header>
         <h1>Un'App a Settimana con AI</h1>
-        <p>Benvenuti nel mio progetto innovativo: <span class="highlight">creare un'app a settimana utilizzando esclusivamente l'intelligenza artificiale</span>.</p>
-        <p>In questa iniziativa unica, esplorerò il potenziale dell'AI nel processo di sviluppo delle applicazioni, dal concetto iniziale all'implementazione finale.</p>
-        <h2>Come funziona?</h2>
-        <ol>
-            <li>Ogni settimana, genero un'idea per una nuova app utilizzando l'AI.</li>
-            <li>Sviluppo il concept e il design dell'interfaccia utente con l'aiuto dell'intelligenza artificiale.</li>
-            <li>Implemento il codice dell'applicazione utilizzando strumenti di AI coding.</li>
-            <li>Testo e raffino l'app con l'assistenza dell'AI.</li>
-            <li>Pubblico l'app completata e condivido i risultati e le lezioni apprese.</li>
-        </ol>
-        <p>Questo progetto mira a dimostrare le capacità dell'intelligenza artificiale nel campo dello sviluppo software e a esplorare nuove frontiere nella creazione di applicazioni.</p>
-        <p>Seguite il mio viaggio mentre creo <span class="highlight">52 app in 52 settimane</span>, tutte alimentate dall'intelligenza artificiale!</p>
-        <a href="https://play.google.com/store/apps/developer?id=Andrea+Bravaccino" class="cta-button">Esplora le App</a>
+        <p class="tagline">Innovazione attraverso l'Intelligenza Artificiale</p>
+    </header>
+    <div class="container">
+        <div class="card">
+            <h2>Il Progetto</h2>
+            <p>Benvenuti nella mia sfida innovativa: <span class="highlight">creare un'app a settimana utilizzando esclusivamente l'intelligenza artificiale</span>.</p>
+            <p>Esploro il potenziale dell'AI nel processo di sviluppo delle applicazioni, dal concetto iniziale all'implementazione finale.</p>
+        </div>
+        <div class="card">
+            <h2>Il Processo</h2>
+            <ol>
+                <li>Generazione dell'idea con AI</li>
+                <li>Design dell'interfaccia utente assistito da AI</li>
+                <li>Implementazione del codice con strumenti AI</li>
+                <li>Testing e raffinamento guidati dall'intelligenza artificiale</li>
+                <li>Pubblicazione e condivisione dei risultati</li>
+            </ol>
+        </div>
+        <div class="card">
+            <h2>L'Obiettivo</h2>
+            <p>Questo progetto mira a dimostrare le capacità dell'intelligenza artificiale nello sviluppo software e a esplorare nuove frontiere nella creazione di applicazioni.</p>
+            <p>Seguite il mio viaggio mentre creo <span class="highlight">52 app in 52 settimane</span>, tutte alimentate dall'intelligenza artificiale!</p>
+            <a href="#" class="cta-button">Esplora le App</a>
+        </div>
     </div>
 </body>
 </html>
