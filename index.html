@@ -5,7 +5,6 @@
     <title>Andrea Bravaccino - Una App a Settimana con l'IA</title>
     <meta name="description" content="Presentazione dell'iniziativa di creare una app a settimana utilizzando esclusivamente l'intelligenza artificiale, dal processo creativo all'implementazione.">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <!-- Stili CSS di base per un aspetto professionale -->
     <style>
         body {
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
@@ -18,13 +17,18 @@
             color: white;
             padding: 60px 20px;
             text-align: center;
+            background-image: url('header-bg.jpg');
+            background-size: cover;
+            background-position: center;
         }
         header h1 {
             margin-bottom: 10px;
             font-size: 2.5em;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
         }
         header p {
             font-size: 1.2em;
+            text-shadow: 1px 1px 2px rgba(0,0,0,0.5);
         }
         nav {
             background-color: #005bb5;
@@ -73,6 +77,18 @@
             text-align: center;
             padding: 20px;
         }
+        .image-container {
+            display: flex;
+            justify-content: space-around;
+            flex-wrap: wrap;
+            margin-top: 20px;
+        }
+        .image-container img {
+            max-width: 300px;
+            margin: 10px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+        }
         @media (min-width: 768px) {
             main {
                 max-width: 800px;
@@ -82,27 +98,26 @@
     </style>
 </head>
 <body>
-
 <header>
     <h1>Una App a Settimana con l'Intelligenza Artificiale</h1>
     <p>Presentata da <strong>Andrea Bravaccino</strong></p>
 </header>
-
 <nav>
     <a href="#about">Chi Sono</a>
     <a href="#apps">Le Mie App</a>
     <a href="#process">Il Processo</a>
     <a href="#contact">Contatti</a>
 </nav>
-
 <main>
     <section id="about">
         <h2>Chi Sono</h2>
         <p>
-            Sono un Salesforce Architect che ha intrapreso un'iniziativa: creare una nuova app ogni settimana utilizzando esclusivamente l'intelligenza artificiale, dal processo creativo all'implementazione finale. Questa sfida mi permette di esplorare le potenzialità dell'IA e di spingermi Ai confini dell'innovazione nel campo dello sviluppo software.
+            Sono un Salesforce Architect che ha intrapreso un'iniziativa: creare una nuova app ogni settimana utilizzando esclusivamente l'intelligenza artificiale, dal processo creativo all'implementazione finale. Questa sfida mi permette di esplorare le potenzialità dell'IA e di spingermi ai confini dell'innovazione nel campo dello sviluppo software.
         </p>
+        <div class="image-container">
+            <img src="ai-developer.jpg" alt="AI Developer Concept">
+        </div>
     </section>
-
     <section id="apps">
         <h2>Le Mie App</h2>
         <p>
@@ -111,8 +126,10 @@
         <p>
             <a href="https://play.google.com/store/apps/developer?id=Andrea+Bravaccino" target="_blank">Visita il mio profilo sul Play Store</a>
         </p>
+        <div class="image-container">
+            <img src="app-showcase.jpg" alt="App Showcase">
+        </div>
     </section>
-
     <section id="process">
         <h2>Il Processo</h2>
         <p>
@@ -121,8 +138,10 @@
         <p>
             <a href="https://www.threads.net/@andrea150592?invite=4" target="_blank">Segui @andrea150592 su Threads</a>
         </p>
+        <div class="image-container">
+            <img src="ai-process.jpg" alt="AI Development Process">
+        </div>
     </section>
-
     <section id="contact">
         <h2>Contatti</h2>
         <p class="contact-info">
@@ -133,10 +152,8 @@
         </p>
     </section>
 </main>
-
 <footer>
     <p>&copy; 2023 Andrea Bravaccino. Tutti i diritti riservati.</p>
 </footer>
-
 </body>
 </html>
