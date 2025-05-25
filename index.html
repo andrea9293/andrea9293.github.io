@@ -1,19 +1,11 @@
 <!DOCTYPE html>
-<html lang="it">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Andrea Bravaccino - Una App a Settimana con l'IA</title>
-    <meta name="description" content="Presentazione dell'iniziativa di creare una app a settimana utilizzando esclusivamente l'intelligenza artificiale, dal processo creativo all'implementazione.">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Andrea Bravaccino - AI Developer | Salesforce Architect</title>
     <style>
-        :root {
-            --primary-color: #2563eb;
-            --secondary-color: #1e40af;
-            --text-color: #1f2937;
-            --bg-color: #f8fafc;
-            --accent-color: #dbeafe;
-        }
-
+        /* Basic Reset */
         * {
             margin: 0;
             padding: 0;
@@ -21,212 +13,273 @@
         }
 
         body {
-            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
-            color: var(--text-color);
-            background-color: var(--bg-color);
+            font-family: 'Courier New', Courier, monospace; /* Cyberpunk font */
+            background-color: #0a0a23; /* Dark blue/purple */
+            color: #00f0ff; /* Neon blue text */
             line-height: 1.6;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            background-color: #1a1a3a; /* Slightly lighter dark shade for content background */
+            padding: 20px;
+            border: 1px solid #00f0ff;
+            box-shadow: 0 0 15px #00f0ff, 0 0 25px #00f0ff inset;
         }
 
         header {
-            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
-            color: white;
-            padding: 80px 20px;
             text-align: center;
-            position: relative;
-            overflow: hidden;
-        }
-
-        header::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background: url('header-bg.jpg') center/cover;
-            opacity: 0.2;
-            z-index: 0;
-        }
-
-        header > * {
-            position: relative;
-            z-index: 1;
+            margin-bottom: 30px;
+            padding-bottom: 20px;
+            border-bottom: 1px dashed #ff00ff; /* Neon pink accent */
         }
 
         header h1 {
-            font-size: 3em;
-            margin-bottom: 20px;
-            font-weight: 800;
-            letter-spacing: -1px;
+            font-size: 2.8em;
+            color: #ff00ff; /* Neon pink */
+            text-shadow: 0 0 5px #ff00ff, 0 0 10px #ff00ff, 0 0 15px #ff00ff;
+            margin-bottom: 5px;
+            animation: pulsate 2s infinite alternate;
         }
 
-        nav {
-            background-color: white;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
-            position: sticky;
-            top: 0;
-            z-index: 100;
+        @keyframes pulsate {
+            0% { text-shadow: 0 0 5px #ff00ff, 0 0 10px #ff00ff, 0 0 15px #ff00ff; }
+            100% { text-shadow: 0 0 10px #ff00ff, 0 0 15px #ff00ff, 0 0 20px #ff00ff, 0 0 5px #fff; }
         }
 
-        nav .nav-container {
-            max-width: 1200px;
-            margin: 0 auto;
-            display: flex;
-            justify-content: center;
-            gap: 20px;
-        }
-
-        nav a {
-            color: var(--text-color);
-            text-decoration: none;
-            padding: 20px;
-            font-weight: 500;
-            transition: color 0.3s;
-        }
-
-        nav a:hover {
-            color: var(--primary-color);
-        }
-
-        main {
-            max-width: 1000px;
-            margin: 0 auto;
-            padding: 60px 20px;
+        header h2 {
+            font-size: 1.5em;
+            color: #00f0ff; /* Neon blue */
+            text-shadow: 0 0 3px #00f0ff, 0 0 5px #00f0ff;
         }
 
         section {
-            margin-bottom: 80px;
-            background: white;
-            padding: 40px;
-            border-radius: 16px;
-            box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+            margin-bottom: 25px;
+            padding: 15px;
+            border: 1px solid #4a4a7a; /* Softer border for sections */
+            background-color: #101028; /* Slightly different dark shade for sections */
         }
 
-        section h2 {
-            font-size: 2.5em;
-            color: var(--primary-color);
-            margin-bottom: 30px;
-            font-weight: 700;
+        section h3 {
+            font-size: 1.8em;
+            color: #39ff14; /* Neon green */
+            text-shadow: 0 0 4px #39ff14, 0 0 8px #39ff14;
+            margin-bottom: 15px;
+            border-bottom: 1px solid #39ff14;
+            padding-bottom: 5px;
+            animation: flicker 3s infinite;
+        }
+        
+        @keyframes flicker {
+            0%, 18%, 22%, 25%, 53%, 57%, 100% {
+                text-shadow:
+                0 0 4px #39ff14,
+                0 0 8px #39ff14,
+                0 0 12px #39ff14;
+            }
+            20%, 24%, 55% {        
+                text-shadow: none;
+            }
         }
 
-        .image-container {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 30px;
-            margin-top: 40px;
+        ul {
+            list-style-type: none;
         }
 
-        .image-container img {
-            width: 100%;
-            border-radius: 12px;
-            transition: transform 0.3s;
-            box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+        ul li {
+            margin-bottom: 8px;
+            padding-left: 15px;
+            position: relative;
         }
 
-        .image-container img:hover {
-            transform: translateY(-5px);
+        ul li::before {
+            content: ">"; /* Cyberpunk style list bullet */
+            position: absolute;
+            left: 0;
+            color: #ff00ff; /* Neon pink */
+            font-weight: bold;
         }
 
-        .contact-info {
-            background: var(--accent-color);
-            padding: 30px;
-            border-radius: 12px;
-            margin-top: 20px;
-        }
-
-        .contact-info a {
-            color: var(--primary-color);
+        a {
+            color: #00f0ff;
             text-decoration: none;
-            font-weight: 600;
-            transition: color 0.3s;
+            transition: color 0.3s ease, text-shadow 0.3s ease;
         }
 
-        .contact-info a:hover {
-            color: var(--secondary-color);
+        a:hover {
+            color: #ff00ff; /* Neon pink on hover */
+            text-shadow: 0 0 5px #ff00ff;
+        }
+
+        .contact-info p, .education-item p, .certification-item, .skill-item, .profile-text p, .work-item p, .project-item p {
+            margin-bottom: 5px;
+        }
+        
+        .contact-info p strong, .education-item strong, .work-item strong, .project-item strong {
+            color: #39ff14; /* Neon green for emphasis */
+        }
+
+        .work-item, .project-item {
+            margin-bottom: 15px;
+        }
+
+        .work-item h4, .project-item h4 {
+            font-size: 1.3em;
+            color: #00f0ff;
+            margin-bottom: 5px;
+        }
+        
+        .work-item .date, .education-item .date {
+            font-style: italic;
+            color: #aaa; /* Softer color for dates */
+            font-size: 0.9em;
         }
 
         footer {
-            background-color: var(--text-color);
-            color: white;
             text-align: center;
-            padding: 30px;
-            margin-top: 60px;
+            margin-top: 30px;
+            padding: 15px;
+            border-top: 1px dashed #ff00ff;
+            font-size: 0.9em;
+            color: #aaa;
         }
 
-        @media (max-width: 768px) {
-            header h1 {
-                font-size: 2em;
-            }
-
-            nav .nav-container {
-                flex-direction: column;
-                align-items: center;
-                padding: 10px;
-            }
-
-            nav a {
-                padding: 10px;
-            }
-
-            section {
-                padding: 20px;
-            }
+        /* Specific section styling for better visual separation */
+        #contact, #education, #certifications, #skills, #profile, #experience, #projects {
+             box-shadow: 0 0 10px rgba(0, 240, 255, 0.3);
         }
     </style>
 </head>
 <body>
-    <header>
-        <h1>Una App a Settimana con l'Intelligenza Artificiale</h1>
-        <p>Presentata da <strong>Andrea Bravaccino</strong></p>
-    </header>
-
-    <nav>
-        <div class="nav-container">
-            <a href="#about">Chi Sono</a>
-            <a href="#apps">Le Mie App</a>
-            <a href="#process">Il Processo</a>
-            <a href="#contact">Contatti</a>
-        </div>
-    </nav>
-
-    <main>
-        <section id="about">
-            <h2>Chi Sono</h2>
-            <p>Sono un Salesforce Architect che ha intrapreso un'iniziativa: creare una nuova app ogni settimana utilizzando esclusivamente l'intelligenza artificiale, dal processo creativo all'implementazione finale. Questa sfida mi permette di esplorare le potenzialità dell'IA e di spingermi ai confini dell'innovazione nel campo dello sviluppo software.</p>
-            <div class="image-container">
-                <img src="ai-developer.jpg" alt="AI Developer Concept">
-            </div>
-        </section>
-
-        <section id="apps">
-            <h2>Le Mie App</h2>
-            <p>Scopri tutte le mie applicazioni pubblicate sul Google Play Store. Ogni app è il risultato di idee, progettazione e sviluppo elaborate esclusivamente da IA. Quello che faccio io è mettere insieme i pezzi e correggere i bug (sempre usando IA, se la IA non riesce, i bug restano)</p>
-            <p><a href="https://play.google.com/store/apps/dev?id=8521472964047053607" target="_blank">Visita il mio profilo sul Play Store</a></p>
-            <div class="image-container">
-                <img src="app-showcase.jpg" alt="App Showcase">
-            </div>
-        </section>
-
-        <section id="process">
-            <h2>Il Processo</h2>
-            <p>Documentazione settimanale del mio viaggio attraverso lo sviluppo di ogni app. Segui i miei aggiornamenti su LinkedIn per scoprire come l'IA mi assiste in ogni fase, dalle idee iniziali al prodotto finale.</p>
-            <p><a href="https://www.linkedin.com/in/andreabravaccino/" target="_blank">Seguimi su LinkedIn</a></p>
-            <div class="image-container">
-                <img src="ai-process.jpg" alt="AI Development Process">
-            </div>
-        </section>
+    <div class="container">
+        <header>
+            <h1>ANDREA BRAVACCINO</h1>
+            <h2>Al Developer | Salesforce Architect</h2>
+        </header>
 
         <section id="contact">
-            <h2>Contatti</h2>
+            <h3>CONTACT</h3>
             <div class="contact-info">
-                <p>Per collaborazioni o domande, non esitare a contattarmi:</p>
-                <p>Email: <a href="mailto:andreabravaccino@gmail.com">andreabravaccino@gmail.com</a></p>
+                <p><strong>Phone:</strong> <a href="tel:+393926259222">+39 392 625 9222</a></p>
+                <p><strong>Email:</strong> <a href="mailto:andreabravaccino@gmail.com">andreabravaccino@gmail.com</a></p>
+                <p><strong>LinkedIn:</strong> <a href="https://linkedin.com/in/andreabravaccino/" target="_blank">linkedin.com/in/andreabravaccino/</a></p>
             </div>
         </section>
-    </main>
 
-    <footer>
-        <p>&copy; 2023 Andrea Bravaccino. Tutti i diritti riservati.</p>
-    </footer>
+        <section id="profile">
+            <h3>PROFILE</h3>
+            <div class="profile-text">
+                <p>Salesforce Architect e sviluppatore Al con oltre 6 anni di esperienza nello sviluppo su piattaforma Salesforce, specializzato in soluzioni scalabili, architetture complesse e progetti ad alta intensità di dati. Negli ultimi anni ho integrato competenze avanzate in Intelligenza Artificiale, sviluppando sistemi basati su LLM, embedding semantici e agenti Al intelligenti. La mia forte propensione al problem solving, alla progettazione tecnica e all'innovazione digitale si unisce a un approccio fortemente orientato all'utente finale, supportato da solide capacità di comunicazione e comprensione delle esigenze, anche grazie a un background formativo in counseling psicologico.</p>
+            </div>
+        </section>
+
+        <section id="skills">
+            <h3>SKILLS</h3>
+            <ul>
+                <li class="skill-item">Large Language Models (LLM) & Prompt Engineering</li>
+                <li class="skill-item">Retrieval Augmented Generation</li>
+                <li class="skill-item">Vector embeddings & semantic clustering</li>
+                <li class="skill-item">FastAPI, LangChain, CrewAI</li>
+                <li class="skill-item">Transformers</li>
+                <li class="skill-item">Salesforce Apex, LWC, Flows, Integrations</li>
+                <li class="skill-item">Python, TypeScript, Git, CI/CD</li>
+            </ul>
+        </section>
+
+        <section id="experience">
+            <h3>WORK EXPERIENCE</h3>
+            <article class="work-item">
+                <h4>AI DEVELOPER | SALESFORCE ARCHITECT</h4>
+                <p><strong>Engineering Group</strong></p>
+                <p class="date">Apr 2022 - Present</p>
+                <ul>
+                    <li>Sviluppo di agenti Al specializzati per il supporto clienti e knowledge management (LangChain e CrewAl con Python)</li>
+                    <li>Integrazione LLM (OpenAI, Claude, Gemini)</li>
+                    <li>Architettura e sviluppo di soluzioni CRM complesse in ambito enterprise</li>
+                    <li>Implementazione di moduli personalizzati e automazioni tramite Apex, LWC, Flows</li>
+                    <li>Team Leader e Tutor per figure Junior e Middle</li>
+                </ul>
+            </article>
+            <article class="work-item">
+                <h4>SOFTWARE ENGINEER | SALESFORCE DEVELOPER</h4>
+                <p><strong>Indra</strong></p>
+                <p class="date">Gen 2020 - Mar 2022</p>
+                <ul>
+                    <li>Sviluppo e customizzazione Salesforce per progetti pubblici e privati</li>
+                    <li>Integrazione con sistemi esterni via API REST/SOAP</li>
+                    <li>Delivery di soluzioni su misura per processi di business complessi</li>
+                </ul>
+            </article>
+            <article class="work-item">
+                <h4>SOFTWARE ENGINEER | SALESFORCE DEVELOPER</h4>
+                <p><strong>Enigen Italia (NTT Data)</strong></p>
+                <p class="date">Set 2018 - Gen 2020</p>
+                <ul>
+                    <li>Analisi tecnica e sviluppo in ambienti Service Cloud e Sales Cloud</li>
+                    <li>Supporto post-go-live e manutenzione evolutiva delle soluzioni CRM</li>
+                    <li>Collaborazione cross-team in progetti europei</li>
+                </ul>
+            </article>
+        </section>
+
+        <section id="projects">
+            <h3>PERSONAL PROJECTS</h3>
+            <article class="project-item">
+                <h4>Ariel - Assistente Personale Intelligente</h4>
+                <p>Sviluppo di un assistente Al avanzato basato su LangChain e GPT-40, che integra servizi Google (Gmail, Calendar), Alexa e Telegram per la gestione intelligente di promemoria, email ed eventi. Il progetto è supportato da un robusto backend FastAPI.</p>
+                <p><strong>Tecnologie:</strong> Python, LangChain, GPT-4o (OpenAI API), FastAPI, Google APIs (Gmail, Calendar), Telegram Bot API, Amazon Alexa Skill API.</p>
+            </article>
+            <article class="project-item">
+                <h4>MemoGenius - Al-Powered Personal Assistant</h4>
+                <p><a href="https://github.com/andrea9293/memogenius" target="_blank">https://github.com/andrea9293/memogenius</a></p>
+                <p>Assistente personale intelligente multi-piattaforma (Web, Telegram, Alexa) per la gestione di promemoria e l'accesso a informazioni. Utilizza Google Gemini Al per il Natural Language Processing, con un frontend in React e un backend FastAPI in Python che integra ChromaDB per la memoria vettoriale.</p>
+                <p><strong>Tecnologie:</strong> Python, FastAPI, React, TypeScript, Google Gemini API, ChromaDB, SQLite, Python Telegram Bot, Amazon Alexa Skills Kit.</p>
+            </article>
+            <article class="project-item">
+                <h4>Outlook Email Summarizer Chrome Extension</h4>
+                <p><a href="https://github.com/andrea9293/outlook-email-summarizer" target="_blank">https://github.com/andrea9293/outlook-email-summarizer</a></p>
+                <p>Estensione Chrome che trasforma l'esperienza Outlook fornendo riassunti istantanei delle email e una chat interattiva per porre domande sui contenuti, il tutto alimentato da Google Gemini Al.</p>
+                <p><strong>Tecnologie:</strong> Node.js, Google Gemini Al, Chrome Extensions API, Marked.js.</p>
+            </article>
+            <article class="project-item">
+                <h4>Salesforce Bulk API Tool (Parallel Bulk Delete)</h4>
+                <p><a href="https://github.com/andrea9293/tool-bulk-api-salesforce" target="_blank">https://github.com/andrea9293/tool-bulk-api-salesforce</a></p>
+                <p>Strumento Python per l'esecuzione di operazioni di cancellazione massiva in parallelo su oggetti Salesforce, sfruttando la Bulk API 2.0 per una gestione efficiente di grandi volumi di dati con capacità multi-threading.</p>
+                <p><strong>Tecnologie:</strong> Python, Salesforce Bulk API 2.0, simple_salesforce, requests, python-dotenv, pandas.</p>
+            </article>
+        </section>
+        
+        <section id="education">
+            <h3>EDUCATION</h3>
+            <div class="education-item">
+                <h4>APA Psicoformazione</h4>
+                <p class="date">2021 - present</p>
+                <p>Business and family counseling</p>
+            </div>
+            <div class="education-item">
+                <h4>University of Naples Federico II</h4>
+                <p class="date">2013 - suspended in 2018</p>
+                <p>Computer Science</p>
+            </div>
+        </section>
+
+        <section id="certifications">
+            <h3>MOST IMPORTANT CERTIFICATIONS</h3>
+            <ul>
+                <li class="certification-item">Application Architect</li>
+                <li class="certification-item">System Architect</li>
+                <li class="certification-item">Integration Architect</li>
+                <li class="certification-item">Data Architect</li>
+                <li class="certification-item">Sharing and Visibility Architect</li>
+                <li class="certification-item">Development Lifecycle and Deployment Architect</li>
+            </ul>
+        </section>
+
+        <footer>
+            <p>&copy; 2024 Andrea Bravaccino. Cyberpunk Resume Concept.</p>
+        </footer>
+    </div>
 </body>
 </html>
