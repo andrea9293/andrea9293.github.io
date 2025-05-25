@@ -1,0 +1,38 @@
+{
+  "profile_description": "Salesforce Architect and AI developer with over 6 years of experience in Salesforce platform development, specializing in scalable solutions, complex architectures, and data-intensive projects. In recent years, I have integrated advanced skills in Artificial Intelligence, developing systems based on LLMs, semantic embeddings, and intelligent AI agents. My strong aptitude for problem-solving, technical design, and digital innovation is combined with a strongly user-oriented approach, supported by solid communication and needs-assessment skills, also thanks to a training background in psychological counseling.",
+  "work_experience": {
+    "job1_title": "AI DEVELOPER | SALESFORCE ARCHITECT",
+    "job1_company": "Engineering Group",
+    "job1_responsibilities": [
+      "Development of specialized AI agents for customer support and knowledge management (LangChain and CrewAI with Python)",
+      "LLM Integration (OpenAI, Claude, Gemini)",
+      "Architecture and development of complex CRM solutions in the enterprise sector",
+      "Implementation of custom modules and automations using Apex, LWC, Flows",
+      "Team Leader and Tutor for Junior and Middle figures"
+    ],
+    "job2_title": "SOFTWARE ENGINEER | SALESFORCE DEVELOPER",
+    "job2_company": "Indra",
+    "job2_responsibilities": [
+      "Salesforce development and customization for public and private projects",
+      "Integration with external systems via REST/SOAP API",
+      "Delivery of tailored solutions for complex business processes"
+    ],
+    "job3_title": "SOFTWARE ENGINEER | SALESFORCE DEVELOPER",
+    "job3_company": "Enigen Italia (NTT Data)",
+    "job3_responsibilities": [
+      "Technical analysis and development in Service Cloud and Sales Cloud environments",
+      "Post-go-live support and evolutionary maintenance of CRM solutions",
+      "Cross-team collaboration in European projects"
+    ]
+  },
+  "personal_projects": {
+    "project1_title": "Ariel - Assistente Personale Intelligente",
+    "project1_description": "Development of an advanced AI assistant based on LangChain and GPT-4o, integrating Google services (Gmail, Calendar), Alexa, and Telegram for intelligent management of reminders, emails, and events. The project is supported by a robust FastAPI backend.",
+    "project2_title": "MemoGenius - Al-Powered Personal Assistant",
+    "project2_description": "Multi-platform intelligent personal assistant (Web, Telegram, Alexa) for managing reminders and accessing information. Uses Google Gemini AI for Natural Language Processing, with a React frontend and a FastAPI backend in Python that integrates ChromaDB for vector memory.",
+    "project3_title": "Outlook Email Summarizer Chrome Extension",
+    "project3_description": "Chrome extension that transforms the Outlook experience by providing instant email summaries and an interactive chat to ask questions about content, all powered by Google Gemini AI.",
+    "project4_title": "Salesforce Bulk API Tool (Parallel Bulk Delete)",
+    "project4_description": "Python tool for performing parallel bulk delete operations on Salesforce objects, leveraging Bulk API 2.0 for efficient management of large data volumes with multi-threading capabilities."
+  }
+}
