@@ -27,6 +27,29 @@
             padding: 20px;
             border: 1px solid #00f0ff;
             box-shadow: 0 0 15px #00f0ff, 0 0 25px #00f0ff inset;
+            position: relative; /* For pseudo-element positioning */
+            overflow: hidden; /* To contain the animated grid */
+        }
+
+        .container::before { /* Animated grid background */
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image:
+                linear-gradient(rgba(0, 240, 255, 0.05) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(0, 240, 255, 0.05) 1px, transparent 1px);
+            background-size: 30px 30px; /* Size of the grid cells */
+            animation: animated-grid 20s linear infinite;
+            z-index: 0; /* Behind content but above container's background-color */
+            pointer-events: none;
+        }
+
+        @keyframes animated-grid {
+            0% { background-position: 0 0; }
+            100% { background-position: 60px 60px; } /* Adjust for desired speed and direction */
         }
 
         header {
@@ -45,8 +68,14 @@
         }
 
         @keyframes pulsate {
-            0% { text-shadow: 0 0 5px #ff00ff, 0 0 10px #ff00ff, 0 0 15px #ff00ff; }
-            100% { text-shadow: 0 0 10px #ff00ff, 0 0 15px #ff00ff, 0 0 20px #ff00ff, 0 0 5px #fff; }
+            0% { 
+                text-shadow: 0 0 5px #ff00ff, 0 0 10px #ff00ff, 0 0 15px #ff00ff, 0 0 2px rgba(255,255,255,0.3);
+                opacity: 0.9;
+            }
+            100% { 
+                text-shadow: 0 0 10px #ff00ff, 0 0 20px #ff00ff, 0 0 30px #ff00ff, 0 0 10px #fff, 0 0 15px #fff;
+                opacity: 1;
+            }
         }
 
         header h2 {
@@ -69,18 +98,40 @@
             margin-bottom: 15px;
             border-bottom: 1px solid #39ff14;
             padding-bottom: 5px;
-            animation: flicker 3s infinite;
+            animation: flicker 2.5s infinite; /* Slightly faster flicker */
+            position: relative; /* For hover effect */
+            transition: text-shadow 0.2s ease-in-out;
+        }
+
+        section h3:hover {
+            text-shadow: 0 0 6px #39ff14, 0 0 12px #39ff14, 0 0 18px #39ff14, 0 0 5px #fff; /* Intensified glow on hover */
+            animation-play-state: paused; /* Pause flicker on hover for a stable intensified glow */
         }
         
-        @keyframes flicker {
-            0%, 18%, 22%, 25%, 53%, 57%, 100% {
-                text-shadow:
-                0 0 4px #39ff14,
-                0 0 8px #39ff14,
-                0 0 12px #39ff14;
+        @keyframes flicker { /* Adjusted flicker effect */
+            0%, 100% {
+                text-shadow: 0 0 4px #39ff14, 0 0 8px #39ff14, 0 0 12px #39ff14;
+                opacity: 1;
             }
-            20%, 24%, 55% {        
+            15% {
+                text-shadow: 0 0 4px rgba(57, 255, 20, 0.5), 0 0 8px rgba(57, 255, 20, 0.3);
+                opacity: 0.8;
+            }
+            30% {
+                text-shadow: 0 0 4px #39ff14, 0 0 8px #39ff14;
+                opacity: 1;
+            }
+            45% {
+                text-shadow: 0 0 2px rgba(57, 255, 20, 0.3);
+                opacity: 0.7;
+            }
+            60% {
                 text-shadow: none;
+                opacity: 0.6;
+            }
+            75% {
+                text-shadow: 0 0 4px #39ff14;
+                opacity: 0.9;
             }
         }
 
@@ -105,13 +156,38 @@
         a {
             color: #00f0ff;
             text-decoration: none;
-            transition: color 0.3s ease, text-shadow 0.3s ease;
+            transition: color 0.2s ease, text-shadow 0.2s ease;
+            position: relative; /* For glitch pseudo-element */
         }
 
         a:hover {
             color: #ff00ff; /* Neon pink on hover */
-            text-shadow: 0 0 5px #ff00ff;
+            text-shadow: 0 0 5px #ff00ff, 0 0 10px #ff00ff;
+            animation: link-glitch 0.25s steps(2, jump-end) forwards;
         }
+
+        @keyframes link-glitch { /* Simple glitch for links on hover */
+            0% {
+                text-shadow: 0 0 5px #ff00ff, 0 0 10px #ff00ff, 
+                             -1px -1px 0px #39ff14, 1px 1px 0px #00f0ff; /* momentary color separation */
+                transform: translateX(0);
+            }
+            33% {
+                text-shadow: 0 0 5px #ff00ff, 0 0 10px #ff00ff, 
+                             1px 1px 0px #39ff14, -1px -1px 0px #00f0ff;
+                transform: translateX(-1px);
+            }
+            66% {
+                text-shadow: 0 0 5px #ff00ff, 0 0 10px #ff00ff, 
+                             -1px 1px 0px #39ff14, 1px -1px 0px #00f0ff;
+                transform: translateX(1px);
+            }
+            100% {
+                text-shadow: 0 0 5px #ff00ff, 0 0 10px #ff00ff; /* Return to hover state */
+                transform: translateX(0);
+            }
+        }
+
 
         .contact-info p, .education-item p, .certification-item, .skill-item, .profile-text p, .work-item p, .project-item p {
             margin-bottom: 5px;
@@ -150,9 +226,148 @@
         #contact, #education, #certifications, #skills, #profile, #experience, #projects {
              box-shadow: 0 0 10px rgba(0, 240, 255, 0.3);
         }
+
+        /* Background Animations */
+        .animated-bg-elements {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1; /* Ensure it's behind all content */
+            pointer-events: none; /* Make sure it doesn't interfere with mouse events */
+            overflow: hidden; /* Hide elements when they go off-screen */
+        }
+
+        .drone {
+            position: absolute;
+            width: 20px;
+            height: 8px;
+            background-color: #39ff14; /* Neon green */
+            box-shadow: 0 0 3px #39ff14, 0 0 5px #39ff14;
+            animation: fly-drone-optimized 25s linear infinite;
+            top: 5%; /* Start near the top */
+            left: 0; /* Initial position for transform */
+            will-change: transform; /* Hint for optimization */
+        }
+
+        .drone::before { /* Drone 'eye'/'light' */
+            content: '';
+            position: absolute;
+            width: 4px;
+            height: 4px;
+            background-color: #ff00ff; /* Neon pink */
+            box-shadow: 0 0 2px #ff00ff;
+            right: 3px;
+            top: 2px;
+        }
+
+        @keyframes fly-drone-optimized {
+            0% {
+                transform: translateX(-20px) translateY(0); /* Start off-screen (its own width) */
+            }
+            50% {
+                transform: translateX(calc(50vw - 10px)) translateY(-10px); /* Mid-viewport, 10px is half drone width */
+            }
+            100% {
+                transform: translateX(100vw) translateY(0); /* End fully off-screen right of viewport */
+            }
+        }
+        
+        /* Glitch Runner - very simple pixelated figure */
+        .glitch-runner {
+            position: absolute;
+            width: 6px; /* 3 pixels wide */
+            height: 12px; /* 6 pixels high */
+            bottom: 2%; /* Near the bottom */
+            animation: run-glitch-optimized 15s linear infinite;
+            animation-delay: 5s; /* Start a bit later than the drone */
+            left: 0; /* Initial position for transform */
+            will-change: transform, opacity; /* Hint for optimization */
+        }
+
+        .glitch-runner::before { /* Head */
+            content: '';
+            position: absolute;
+            width: 6px;
+            height: 6px;
+            background-color: #00f0ff; /* Neon blue */
+            box-shadow: 0 0 2px #00f0ff;
+            top: 0;
+            left: 0;
+             animation: glitch-flicker 0.3s steps(2, jump-none) infinite;
+        }
+
+        .glitch-runner::after { /* Body */
+            content: '';
+            position: absolute;
+            width: 6px;
+            height: 6px;
+            background-color: #00f0ff; /* Neon blue */
+            box-shadow: 0 0 2px #00f0ff;
+            top: 6px;
+            left: 0;
+            animation: glitch-flicker 0.5s steps(2, jump-none) infinite reverse; /* Slightly different flicker */
+        }
+        
+        @keyframes run-glitch-optimized {
+            0% {
+                transform: translateX(-6px); /* Start off-screen (its own width) */
+                opacity: 0.8;
+            }
+            5% {
+                transform: translateX(calc(5vw - 3px)); /* Slight move in, then full speed */
+                opacity: 1; /* Appear */
+            }
+            95% {
+                transform: translateX(calc(95vw - 3px)); /* About to disappear */
+                opacity: 1; 
+            }
+            100% {
+                transform: translateX(100vw); /* Move across the screen */
+                opacity: 0;
+            }
+        }
+
+        @keyframes glitch-flicker {
+            0% { opacity: 0.7; }
+            50% { opacity: 1; }
+            100% { opacity: 0.7; }
+        }
+
+        /* Performance Optimizations for Mobile */
+        @media (max-width: 768px) {
+            header h1 {
+                animation-name: none; /* Disable pulsate */
+                /* Keep a static decent shadow if animation is off */
+                text-shadow: 0 0 10px #ff00ff, 0 0 20px #ff00ff, 0 0 5px rgba(255,255,255,0.5);
+            }
+            section h3 {
+                animation-name: none; /* Disable flicker */
+                 /* Keep a static decent shadow */
+                text-shadow: 0 0 4px #39ff14, 0 0 8px #39ff14;
+            }
+            /* Ensure hover effect for h3 still works well */
+            section h3:hover {
+                text-shadow: 0 0 6px #39ff14, 0 0 12px #39ff14, 0 0 18px #39ff14, 0 0 5px #fff;
+            }
+
+            /* Optionally, simplify or slow down other animations if needed, e.g., link glitch */
+            a:hover {
+                animation-name: none; /* Optionally disable link glitch on mobile for very sensitive users/devices */
+                 /* Ensure base hover is still good */
+                color: #ff00ff;
+                text-shadow: 0 0 5px #ff00ff, 0 0 10px #ff00ff;
+            }
+        }
+
     </style>
 </head>
 <body>
+    <div class="animated-bg-elements">
+        <div class="drone"></div>
+        <div class="glitch-runner"></div>
+    </div>
     <div class="container">
         <header>
             <h1>ANDREA BRAVACCINO</h1>
@@ -171,7 +386,7 @@
         <section id="profile">
             <h3>PROFILE</h3>
             <div class="profile-text">
-                <p>Salesforce Architect e sviluppatore Al con oltre 6 anni di esperienza nello sviluppo su piattaforma Salesforce, specializzato in soluzioni scalabili, architetture complesse e progetti ad alta intensità di dati. Negli ultimi anni ho integrato competenze avanzate in Intelligenza Artificiale, sviluppando sistemi basati su LLM, embedding semantici e agenti Al intelligenti. La mia forte propensione al problem solving, alla progettazione tecnica e all'innovazione digitale si unisce a un approccio fortemente orientato all'utente finale, supportato da solide capacità di comunicazione e comprensione delle esigenze, anche grazie a un background formativo in counseling psicologico.</p>
+                <p>Salesforce Architect and AI developer with over 6 years of experience in Salesforce platform development, specializing in scalable solutions, complex architectures, and data-intensive projects. In recent years, I have integrated advanced skills in Artificial Intelligence, developing systems based on LLMs, semantic embeddings, and intelligent AI agents. My strong aptitude for problem-solving, technical design, and digital innovation is combined with a strongly user-oriented approach, supported by solid communication and needs-assessment skills, also thanks to a training background in psychological counseling.</p>
             </div>
         </section>
 
@@ -195,11 +410,11 @@
                 <p><strong>Engineering Group</strong></p>
                 <p class="date">Apr 2022 - Present</p>
                 <ul>
-                    <li>Sviluppo di agenti Al specializzati per il supporto clienti e knowledge management (LangChain e CrewAl con Python)</li>
-                    <li>Integrazione LLM (OpenAI, Claude, Gemini)</li>
-                    <li>Architettura e sviluppo di soluzioni CRM complesse in ambito enterprise</li>
-                    <li>Implementazione di moduli personalizzati e automazioni tramite Apex, LWC, Flows</li>
-                    <li>Team Leader e Tutor per figure Junior e Middle</li>
+                    <li>Development of specialized AI agents for customer support and knowledge management (LangChain and CrewAI with Python)</li>
+                    <li>LLM Integration (OpenAI, Claude, Gemini)</li>
+                    <li>Architecture and development of complex CRM solutions in the enterprise sector</li>
+                    <li>Implementation of custom modules and automations using Apex, LWC, Flows</li>
+                    <li>Team Leader and Tutor for Junior and Middle figures</li>
                 </ul>
             </article>
             <article class="work-item">
@@ -207,9 +422,9 @@
                 <p><strong>Indra</strong></p>
                 <p class="date">Gen 2020 - Mar 2022</p>
                 <ul>
-                    <li>Sviluppo e customizzazione Salesforce per progetti pubblici e privati</li>
-                    <li>Integrazione con sistemi esterni via API REST/SOAP</li>
-                    <li>Delivery di soluzioni su misura per processi di business complessi</li>
+                    <li>Salesforce development and customization for public and private projects</li>
+                    <li>Integration with external systems via REST/SOAP API</li>
+                    <li>Delivery of tailored solutions for complex business processes</li>
                 </ul>
             </article>
             <article class="work-item">
@@ -217,9 +432,9 @@
                 <p><strong>Enigen Italia (NTT Data)</strong></p>
                 <p class="date">Set 2018 - Gen 2020</p>
                 <ul>
-                    <li>Analisi tecnica e sviluppo in ambienti Service Cloud e Sales Cloud</li>
-                    <li>Supporto post-go-live e manutenzione evolutiva delle soluzioni CRM</li>
-                    <li>Collaborazione cross-team in progetti europei</li>
+                    <li>Technical analysis and development in Service Cloud and Sales Cloud environments</li>
+                    <li>Post-go-live support and evolutionary maintenance of CRM solutions</li>
+                    <li>Cross-team collaboration in European projects</li>
                 </ul>
             </article>
         </section>
@@ -228,25 +443,25 @@
             <h3>PERSONAL PROJECTS</h3>
             <article class="project-item">
                 <h4>Ariel - Assistente Personale Intelligente</h4>
-                <p>Sviluppo di un assistente Al avanzato basato su LangChain e GPT-40, che integra servizi Google (Gmail, Calendar), Alexa e Telegram per la gestione intelligente di promemoria, email ed eventi. Il progetto è supportato da un robusto backend FastAPI.</p>
+                <p>Development of an advanced AI assistant based on LangChain and GPT-4o, integrating Google services (Gmail, Calendar), Alexa, and Telegram for intelligent management of reminders, emails, and events. The project is supported by a robust FastAPI backend.</p>
                 <p><strong>Tecnologie:</strong> Python, LangChain, GPT-4o (OpenAI API), FastAPI, Google APIs (Gmail, Calendar), Telegram Bot API, Amazon Alexa Skill API.</p>
             </article>
             <article class="project-item">
                 <h4>MemoGenius - Al-Powered Personal Assistant</h4>
                 <p><a href="https://github.com/andrea9293/memogenius" target="_blank">https://github.com/andrea9293/memogenius</a></p>
-                <p>Assistente personale intelligente multi-piattaforma (Web, Telegram, Alexa) per la gestione di promemoria e l'accesso a informazioni. Utilizza Google Gemini Al per il Natural Language Processing, con un frontend in React e un backend FastAPI in Python che integra ChromaDB per la memoria vettoriale.</p>
+                <p>Multi-platform intelligent personal assistant (Web, Telegram, Alexa) for managing reminders and accessing information. Uses Google Gemini AI for Natural Language Processing, with a React frontend and a FastAPI backend in Python that integrates ChromaDB for vector memory.</p>
                 <p><strong>Tecnologie:</strong> Python, FastAPI, React, TypeScript, Google Gemini API, ChromaDB, SQLite, Python Telegram Bot, Amazon Alexa Skills Kit.</p>
             </article>
             <article class="project-item">
                 <h4>Outlook Email Summarizer Chrome Extension</h4>
                 <p><a href="https://github.com/andrea9293/outlook-email-summarizer" target="_blank">https://github.com/andrea9293/outlook-email-summarizer</a></p>
-                <p>Estensione Chrome che trasforma l'esperienza Outlook fornendo riassunti istantanei delle email e una chat interattiva per porre domande sui contenuti, il tutto alimentato da Google Gemini Al.</p>
+                <p>Chrome extension that transforms the Outlook experience by providing instant email summaries and an interactive chat to ask questions about content, all powered by Google Gemini AI.</p>
                 <p><strong>Tecnologie:</strong> Node.js, Google Gemini Al, Chrome Extensions API, Marked.js.</p>
             </article>
             <article class="project-item">
                 <h4>Salesforce Bulk API Tool (Parallel Bulk Delete)</h4>
                 <p><a href="https://github.com/andrea9293/tool-bulk-api-salesforce" target="_blank">https://github.com/andrea9293/tool-bulk-api-salesforce</a></p>
-                <p>Strumento Python per l'esecuzione di operazioni di cancellazione massiva in parallelo su oggetti Salesforce, sfruttando la Bulk API 2.0 per una gestione efficiente di grandi volumi di dati con capacità multi-threading.</p>
+                <p>Python tool for performing parallel bulk delete operations on Salesforce objects, leveraging Bulk API 2.0 for efficient management of large data volumes with multi-threading capabilities.</p>
                 <p><strong>Tecnologie:</strong> Python, Salesforce Bulk API 2.0, simple_salesforce, requests, python-dotenv, pandas.</p>
             </article>
         </section>

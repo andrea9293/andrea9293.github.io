@@ -1,0 +1,38 @@
+{
+  "profile_description": "Salesforce Architect e sviluppatore Al con oltre 6 anni di esperienza nello sviluppo su piattaforma Salesforce, specializzato in soluzioni scalabili, architetture complesse e progetti ad alta intensità di dati. Negli ultimi anni ho integrato competenze avanzate in Intelligenza Artificiale, sviluppando sistemi basati su LLM, embedding semantici e agenti Al intelligenti. La mia forte propensione al problem solving, alla progettazione tecnica e all'innovazione digitale si unisce a un approccio fortemente orientato all'utente finale, supportato da solide capacità di comunicazione e comprensione delle esigenze, anche grazie a un background formativo in counseling psicologico.",
+  "work_experience": {
+    "job1_title": "AI DEVELOPER | SALESFORCE ARCHITECT",
+    "job1_company": "Engineering Group",
+    "job1_responsibilities": [
+      "Sviluppo di agenti Al specializzati per il supporto clienti e knowledge management (LangChain e CrewAl con Python)",
+      "Integrazione LLM (OpenAI, Claude, Gemini)",
+      "Architettura e sviluppo di soluzioni CRM complesse in ambito enterprise",
+      "Implementazione di moduli personalizzati e automazioni tramite Apex, LWC, Flows",
+      "Team Leader e Tutor per figure Junior e Middle"
+    ],
+    "job2_title": "SOFTWARE ENGINEER | SALESFORCE DEVELOPER",
+    "job2_company": "Indra",
+    "job2_responsibilities": [
+      "Sviluppo e customizzazione Salesforce per progetti pubblici e privati",
+      "Integrazione con sistemi esterni via API REST/SOAP",
+      "Delivery di soluzioni su misura per processi di business complessi"
+    ],
+    "job3_title": "SOFTWARE ENGINEER | SALESFORCE DEVELOPER",
+    "job3_company": "Enigen Italia (NTT Data)",
+    "job3_responsibilities": [
+      "Analisi tecnica e sviluppo in ambienti Service Cloud e Sales Cloud",
+      "Supporto post-go-live e manutenzione evolutiva delle soluzioni CRM",
+      "Collaborazione cross-team in progetti europei"
+    ]
+  },
+  "personal_projects": {
+    "project1_title": "Ariel - Assistente Personale Intelligente",
+    "project1_description": "Sviluppo di un assistente Al avanzato basato su LangChain e GPT-40, che integra servizi Google (Gmail, Calendar), Alexa e Telegram per la gestione intelligente di promemoria, email ed eventi. Il progetto è supportato da un robusto backend FastAPI.",
+    "project2_title": "MemoGenius - Al-Powered Personal Assistant",
+    "project2_description": "Assistente personale intelligente multi-piattaforma (Web, Telegram, Alexa) per la gestione di promemoria e l'accesso a informazioni. Utilizza Google Gemini Al per il Natural Language Processing, con un frontend in React e un backend FastAPI in Python che integra ChromaDB per la memoria vettoriale.",
+    "project3_title": "Outlook Email Summarizer Chrome Extension",
+    "project3_description": "Estensione Chrome che trasforma l'esperienza Outlook fornendo riassunti istantanei delle email e una chat interattiva per porre domande sui contenuti, il tutto alimentato da Google Gemini Al.",
+    "project4_title": "Salesforce Bulk API Tool (Parallel Bulk Delete)",
+    "project4_description": "Strumento Python per l'esecuzione di operazioni di cancellazione massiva in parallelo su oggetti Salesforce, sfruttando la Bulk API 2.0 per una gestione efficiente di grandi volumi di dati con capacità multi-threading."
+  }
+}
