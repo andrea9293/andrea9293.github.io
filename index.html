@@ -13,20 +13,21 @@
         }
 
         body {
-            font-family: 'Courier New', Courier, monospace; /* Cyberpunk font */
-            background-color: #0a0a23; /* Dark blue/purple */
-            color: #00f0ff; /* Neon blue text */
+            font-family: 'Courier New', Courier, monospace;
+            background-color: #1a0033; /* Viola scuro come negli screenshot */
+            color: #ffffff; /* Testo bianco per maggiore leggibilità */
             line-height: 1.6;
             padding: 20px;
+            overflow-x: hidden;
         }
 
         .container {
             max-width: 900px;
             margin: 0 auto;
-            background-color: #1a1a3a; /* Slightly lighter dark shade for content background */
+            background-color: #1a0033; /* Sfondo viola scuro come negli screenshot */
             padding: 20px;
-            border: 1px solid #00f0ff;
-            box-shadow: 0 0 15px #00f0ff, 0 0 25px #00f0ff inset;
+            border: 1px solid #391c75; /* Bordo più sottile e del colore mostrato negli screenshot */
+            box-shadow: 0 0 15px rgba(255, 0, 255, 0.3); /* Ombra rosa più tenue */
             position: relative; /* For pseudo-element positioning */
             overflow: hidden; /* To contain the animated grid */
         }
@@ -88,7 +89,9 @@
             margin-bottom: 25px;
             padding: 15px;
             border: 1px solid #4a4a7a; /* Softer border for sections */
-            background-color: #101028; /* Slightly different dark shade for sections */
+            background-color: #1c0040; /* Tono di viola più scuro come negli screenshot */
+            position: relative;
+            overflow: hidden;
         }
 
         section h3 {
@@ -227,6 +230,127 @@
              box-shadow: 0 0 10px rgba(0, 240, 255, 0.3);
         }
 
+        /* Stile ispirato agli screenshot di Jules */
+        .jules-feature-card {
+            background-color: #1c0040;
+            border: 1px solid #391c75;
+            padding: 15px;
+            margin-bottom: 15px;
+            border-radius: 5px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .jules-feature-icon {
+            display: inline-block;
+            width: 40px;
+            height: 40px;
+            background-color: #ff00ff;
+            color: #1a0033;
+            text-align: center;
+            line-height: 40px;
+            font-size: 1.5em;
+            font-weight: bold;
+            margin-right: 10px;
+            float: left;
+        }
+
+        .jules-feature-content {
+            margin-left: 50px;
+        }
+
+        .jules-feature-title {
+            color: #ff00ff;
+            font-size: 1.3em;
+            margin-bottom: 10px;
+            font-weight: bold;
+        }
+
+        .jules-feature-desc {
+            color: #ffffff;
+            font-size: 0.95em;
+        }
+
+        .jules-action-button {
+            display: inline-block;
+            background-color: #ff00ff;
+            color: #1a0033;
+            padding: 8px 15px;
+            border: none;
+            border-radius: 3px;
+            font-weight: bold;
+            text-transform: uppercase;
+            margin-top: 10px;
+            cursor: pointer;
+            font-family: 'Courier New', Courier, monospace;
+            transition: all 0.3s ease;
+        }
+
+        .jules-action-button:hover {
+            background-color: #00f0ff;
+            transform: translateY(-2px);
+            box-shadow: 0 0 10px #00f0ff;
+        }
+
+        /* Pixel art elementi ispirati a Jules */
+        .pixel-art-container {
+            margin: 20px 0;
+            display: flex;
+            justify-content: space-around;
+            flex-wrap: wrap;
+        }
+
+        .pixel-person {
+            width: 60px;
+            height: 80px;
+            position: relative;
+            margin: 0 10px;
+        }
+
+        .pixel-head {
+            width: 20px;
+            height: 20px;
+            background-color: #ff00ff;
+            position: absolute;
+            top: 0;
+            left: 20px;
+        }
+
+        .pixel-body {
+            width: 20px;
+            height: 30px;
+            background-color: #ffcc00;
+            position: absolute;
+            top: 20px;
+            left: 20px;
+        }
+
+        .pixel-legs {
+            width: 30px;
+            height: 30px;
+            position: absolute;
+            top: 50px;
+            left: 15px;
+        }
+
+        .pixel-leg-left {
+            width: 10px;
+            height: 30px;
+            background-color: #00f0ff;
+            position: absolute;
+            top: 0;
+            left: 0;
+        }
+
+        .pixel-leg-right {
+            width: 10px;
+            height: 30px;
+            background-color: #00f0ff;
+            position: absolute;
+            top: 0;
+            left: 20px;
+        }
+
         /* Background Animations */
         .animated-bg-elements {
             position: fixed;
@@ -361,6 +485,56 @@
             }
         }
 
+        /* Jules-style Actions Navigation */
+        #main-nav {
+            margin-bottom: 25px;
+            background-color: #1c0040;
+            border: 1px solid #391c75;
+            padding: 15px;
+            border-radius: 5px;
+            text-align: center;
+        }
+        
+        .nav-links {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 15px;
+        }
+        
+        .nav-link {
+            display: inline-block;
+            background-color: #391c75;
+            color: #ffffff;
+            padding: 8px 15px;
+            border-radius: 3px;
+            text-decoration: none;
+            font-weight: bold;
+            transition: all 0.3s ease;
+            border: 1px solid transparent;
+        }
+        
+        .nav-link:hover {
+            background-color: #ff00ff;
+            color: #1a0033;
+            transform: translateY(-2px);
+            box-shadow: 0 0 10px rgba(255, 0, 255, 0.5);
+            text-shadow: none;
+            animation: none;
+        }
+
+        @media (max-width: 768px) {
+            .nav-links {
+                flex-direction: column;
+                gap: 10px;
+            }
+            
+            .nav-link {
+                width: 100%;
+            }
+        }
+
+        /* Performance Optimizations for Mobile */
     </style>
 </head>
 <body>
@@ -374,14 +548,17 @@
             <h2>Al Developer | Salesforce Architect</h2>
         </header>
 
-        <section id="contact">
-            <h3>CONTACT</h3>
-            <div class="contact-info">
-                <p><strong>Phone:</strong> <a href="tel:+393926259222">+39 392 625 9222</a></p>
-                <p><strong>Email:</strong> <a href="mailto:andreabravaccino@gmail.com">andreabravaccino@gmail.com</a></p>
-                <p><strong>LinkedIn:</strong> <a href="https://linkedin.com/in/andreabravaccino/" target="_blank">linkedin.com/in/andreabravaccino/</a></p>
+        <nav id="main-nav">
+            <div class="nav-links">
+                <a href="#profile" class="nav-link">PROFILE</a>
+                <a href="#skills" class="nav-link">SKILLS</a>
+                <a href="#experience" class="nav-link">EXPERIENCE</a>
+                <a href="#projects" class="nav-link">PROJECTS</a>
+                <a href="#education" class="nav-link">EDUCATION</a>
+                <a href="#certifications" class="nav-link">CERTIFICATIONS</a>
+                <a href="#contact" class="nav-link">CONTACTS</a>
             </div>
-        </section>
+        </nav>
 
         <section id="profile">
             <h3>PROFILE</h3>
@@ -492,6 +669,17 @@
             </ul>
         </section>
 
+
+
+        <section id="contact">
+            <h3>CONTACT</h3>
+            <div class="contact-info">
+                <p><strong>Phone:</strong> <a href="tel:+393926259222">+39 392 625 9222</a></p>
+                <p><strong>Email:</strong> <a href="mailto:andreabravaccino@gmail.com">andreabravaccino@gmail.com</a></p>
+                <p><strong>LinkedIn:</strong> <a href="https://linkedin.com/in/andreabravaccino/" target="_blank">linkedin.com/in/andreabravaccino/</a></p>
+            </div>
+        </section>
+        
         <footer>
             <p>&copy; 2024 Andrea Bravaccino. Cyberpunk Resume Concept.</p>
         </footer>
